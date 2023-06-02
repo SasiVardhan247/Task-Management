@@ -41,7 +41,10 @@ const Tasks = () => {
 
   const handleDelete = (id) => {
     const config = { url: `/task/${id}`, method: "delete"};
-    fetchData(config).then(() => fetchTasks());
+    fetchData(config).then(() => fetchTasks()).catch(error => {
+      // Handle the error here, e.g., log the error or display an error message
+      console.error('Error fetching tasks:', error);
+    });
   }
 
 

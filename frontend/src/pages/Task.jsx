@@ -60,12 +60,20 @@ const Task = () => {
       const config = { url: "/task", method: "post", data: formData};
       fetchData(config).then(() => {
         navigate("/");
+      })
+      .catch(error => {
+        // Handle the error here, e.g., log the error or display an error message
+        console.error('Error fetching tasks:', error);
       });
     }
     else {
-      const config = { url: `/task/${taskId}`, method: "put", data: formData};
+      const config = { url: `https://taskmanager-backend-lj93.onrender.com/api/task/${taskId}`, method: "put", data: formData};
       fetchData(config).then(() => {
         navigate("/");
+      })
+      .catch(error => {
+        // Handle the error here, e.g., log the error or display an error message
+        console.error('Error fetching tasks:', error);
       });
     }
   }
