@@ -16,7 +16,7 @@ app.use(errorHandler);
 
 connectDb();
 
-app.use('/api/task',taskRoute);
+// app.use('/api/task',taskRoute);
 
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static(path.resolve(__dirname, "../frontend/build")));
