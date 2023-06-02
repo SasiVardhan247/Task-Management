@@ -1,0 +1,19 @@
+{
+  "name": "task-management",
+  "version": "1.0.0",
+  "description": "Task Management app where you can manage tasks",
+  "main": "index.js",
+  "scripts": {
+    "dev-server": "npm run dev --prefix backend",
+    "dev-client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run dev-server\" \"npm run dev-client\"",
+    "install-all": "npm install && npm install --prefix frontend && npm install --prefix backend",
+    "build": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend",
+    "start": "cd backend && node app.js"
+  },
+  "author": "Sasi Vardhan A",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "concurrently": "^8.1.0"
+  }
+}
