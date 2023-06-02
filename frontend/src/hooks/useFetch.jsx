@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react"
 import { toast } from "react-toastify";
-// import api from "../api";
-import Axios from "axios";
+import api from "../api";
+// import Axios from "axios";
 
 const useFetch = () => {
 
@@ -15,9 +15,9 @@ const useFetch = () => {
   const fetchData = useCallback(async (config, otherOptions) => {
     const { showSuccessToast = true, showErrorToast = true } = otherOptions || {};
     setState(state => ({ ...state, loading: true }));
-    console.log(config);
+    // console.log(config);
     try {
-      const { data } = await Axios.request(config);
+      const { data } = await api.request(config);
       setState({
         loading: false,
         data,
