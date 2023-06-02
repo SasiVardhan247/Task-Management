@@ -22,6 +22,9 @@ app.use('/api/task',taskRoute);
 //   app.use(express.static(path.resolve(__dirname, "../frontend/build")));
 //   app.get("*", (req, res) => res.sendFile(path.resolve(__dirname, "../frontend/build/index.html")));
 // }
+app.get('/about', (req, res) => {
+  res.send('This is my about route..... ')
+})
 
 app.listen(port, () => {
   console.log(`Backend is running on port ${port}`);
