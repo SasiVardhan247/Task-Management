@@ -27,8 +27,9 @@ const Task = () => {
     if (mode === "update") {
       const config = { url: `/task/${taskId}`, method: "get"};
       fetchData(config, { showSuccessToast: false }).then((data) => {
-        setTask(data.task);
-        setFormData({ name: data.task.name ,description: data.task.description });
+        setTask(data[0]);
+        setFormData({ name: data[0].name ,description: data[0].description });
+        // console.log({ name: data.name ,description: data.description });
       })
       .catch(error => {
         // Handle the error here, e.g., log the error or display an error message
@@ -80,7 +81,7 @@ const Task = () => {
             <h2 className='text-center mb-4'>{mode === "add" ? "Add New Task" : "Edit Task"}</h2>
 
             <div className="mb-4">
-                <label htmlFor="name" className="after:content-['*'] after:ml-0.5 after:text-red-500">Name</label>
+                <label htmlFor="name" className="after:content-['*']  after:ml-0.5 after:text-red-500">Name</label>
                 <Input type="text" name="name" id="name" value={formData.name} placeholder="Task name.." onChange={handleChange} />
             </div>
 

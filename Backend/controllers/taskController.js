@@ -38,6 +38,7 @@ const getAllTasks = asyncWrapper(async (req, res, next)=> {
 const getTaskById =asyncWrapper(async (req, res, next) => {
   try {
     const tasks = await Task.find({_id:req.params.taskId});
+    console.log(tasks)
     res.status(200).json(tasks);
   } catch (err) {
     next(err);
