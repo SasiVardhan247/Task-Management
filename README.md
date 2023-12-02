@@ -1,2 +1,2 @@
 # Task-Management
-Manage your tasks
+You can Add,update,delete your tasks and also set the status.
